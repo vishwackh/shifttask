@@ -1,0 +1,59 @@
+<div class="container-fluid ">
+<div class="row">
+<div class="bgcontact">
+<h1 class="text-center white">Celebrating Happy House Shifting</h1>
+</div>
+<div class="contact-info-container">
+  <span class="contact-info-box">
+    <i class="fa fa-map-marker" aria-hidden="true"></i>
+    <span>3rd floor, ICC Chambers, Saki Vihar Road, Andheri (E), Bangalore - 70</span>
+  </span>
+  <span class="contact-info-box">
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    <span><a href="mailto:support@task.com">support@task.com</a></span>
+  </span>
+</div>
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+<div class="getintouch pull-right">
+<img src="images/get-in-touch.svg" class="img-responsive">
+</div>
+</div>
+
+<div class="col-md-6">
+  <div class="panel-min">
+          <h2 class="text-center">Feel free to contact us :</h2>
+          <form name="userForm"  novalidate>
+            <!-- NAME -->
+      			<div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && (userForm.name.$dirty || submitted)}">
+      			<input type="text" name="name" class="form-control input-lg" ng-model="contact.name" placeholder="Your Name" focus ng-required="true">
+      			<p ng-show="userForm.name.$error.required && (userForm.name.$dirty || submitted)" class="help-block">You name is required.</p>
+      			</div>
+
+            <!-- EMAIL -->
+     			 <div class="form-group" ng-class="{ 'has-error' : userForm.emailId.$invalid && (userForm.emailId.$dirty || submitted)}">
+     			 <input type="email" name="emailId" class="form-control input-lg" ng-model="contact.emailId" placeholder="Your Email Address" ng-required="true">
+     			 <p ng-show="userForm.emailId.$error.required && (userForm.emailId.$dirty || submitted)" class="help-block">Email is required.</p>
+     			 <p ng-show="userForm.emailId.$error.email && (userForm.emailId.$dirty || submitted)" class="help-block">Enter a valid email.</p>
+     			 </div>
+
+           <!-- CONTACTNO -->
+    			 <div class="form-group" ng-class="{ 'has-error' : userForm.mobilenumber.$invalid && (userForm.mobilenumber.$dirty || submitted) }">
+    			 <input type="text" name="mobilenumber" class="form-control input-lg" ng-model="contact.mobilenumber" placeholder="Your Contact No" ng-required="true" ng-pattern="/^[789]\d{9}$/" maxlength="10">
+    			 <p ng-show="userForm.mobilenumber.$error.required && (userForm.mobilenumber.$dirty || submitted)" class="help-block">Contact number is Required.</p>
+    			 <p ng-show="userForm.mobilenumber.$error.pattern && (userForm.mobilenumber.$dirty || submitted)" class="help-block">Enter a valid contact number.</p>
+    			 </div>
+
+           <div class="form-group" ng-class="{ 'has-error' : userForm.message.$invalid && (userForm.message.$dirty || submitted)}">
+          <textarea class="form-control input-lg vresize" name="message" rows="3" placeholder="Address" ng-model="contact.message"  ng-required="true"></textarea>
+      <p ng-show="userForm.message.$error.required && (userForm.message.$dirty || submitted)" class="help-block">Your Message is required.</p>
+           </div>
+<button type="submit" ng-disabled="userForm.$invalid" class="btn btn-lg btn-block btn-primary" ng-click="contactus(contact)" disabled="disabled">Submit</button>
+          </form>
+  </div>
+</div>
+</div>
+</div>

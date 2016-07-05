@@ -1,0 +1,15 @@
+                <div id="sidebar-wrapper">
+                	<a href="#menu-toggle" class="pull-right" id="menu-toggle">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>                   
+                    
+                	<div class="sidebar_optns">
+                    	<label class="pull-left"><i class="glyphicon glyphicon-play"></i>SELECT MAIN CATEGORIES</label>
+                    </div>
+                    <div class="clearfix"></div>
+					<ul class="sidebar-nav" id="sidebar">     
+					<li ng-repeat='x in maincategory' ng-click='fetchmaindata(x)'><a href=""><span class="glyphicon glyphicon-dashboard"></span> {{x}}</a></li>
+					</ul>
+				</div>

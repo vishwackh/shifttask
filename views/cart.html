@@ -1,0 +1,66 @@
+<div class="col-md-12 pad0 ">
+  			  <div class="panel panel-default">
+	<div class="panel-heading text-center">
+		CART
+	</div>
+	<div class="panel-body">
+
+<div class="row">
+<div class="col-xs-12 pad0 minh">
+
+<div class="col-xs-12 padbox" ng-repeat="x in mainCart">
+
+    <div class="col-xs-5">
+      <span class="reduce-cart cursor-hand" ng-class="{'not-active' : x.cartcount <= '0' }">
+       <img src="images/reduce-item.png"  ng-hide="x.cartcount <= 0 " ng-click="removeItemFromCart(x)" />
+      </span>
+      <span class="item-quantity">{{x.cartcount}} </span>
+      <span class="add-cart cursor-hand" ng-class="{'not-active' : x.cartcount >= '5' }">
+        <img src="images/add-item.png" ng-hide="x.cartcount >= 5" ng-click="addItemFromCart(x)" />
+      </span>
+    </div>
+
+	<div class="col-xs-5">
+	{{x.name}}
+	</div>
+
+    <div class="col-xs-2">
+		<button type="button" class="btn btn-link btn-xs" ng-click="deleteFromCart(x)">
+			<span class="glyphicon glyphicon-trash red"> </span>
+		</button>
+	</div>
+</div>
+
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-12 padbox">
+
+<div ng-if="mainCart.length <= 0" class="col-xs-12 bbotom">
+<p class="carttext">Your cart is empty. Add Items to Book.</p>
+<a ui-sref="selecttocart" ng-if="booknow"  class="btn btn-primary btn-block">Book Now</a>
+</div>
+
+
+
+<div ng-if="mainCart.length >= 1" class="col-xs-12 bbotom">
+<h4 >Total Items: {{mainCart.length}}</h4>
+</div>
+
+<div class="col-xs-12 bbotom" ng-hide="lastbook">
+<div class="clearfix">&nbsp;</div>
+ <a ui-sref="submitdata"  ng-if="mainCart.length >= 1" class="btn btn-primary btn-block">Proceed to Book</a>
+</div>
+
+<div ng-if="lastbook" class="col-xs-12 bbotom">
+<a ui-sref="selecttocart"  class="btn btn-primary btn-block">Add More To Cart</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+	</div>
+</div>

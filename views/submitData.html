@@ -1,0 +1,253 @@
+
+<div class="container top30">
+<div class="col-md-8">
+ <div class="stepwizard hide">
+    <div class="stepwizard-row setup-panel">
+          <div class="stepwizard-step">
+        <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+        <p>Step 1</p>
+      </div>
+          <div class="stepwizard-step">
+        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+        <p>Step 2</p>
+      </div>
+          <div class="stepwizard-step">
+        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+        <p>Step 3</p>
+      </div>
+        </div>
+  </div>
+      
+<form role="form" name="infoForm"  novalidate>
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+				<div class="panel panel-default">
+				<div class="panel-heading text-center">
+					SHIFTING INFO 1
+				</div>
+
+				<div class="panel-body boxme">
+				<div class="row">
+					<div class="col-xs-6">
+					<div class="form-group" ng-class="{ 'has-error' : infoForm.shiftmy.$invalid && (infoForm.shiftmy.$dirty || submitted)}">
+						<label class="control-label">Shift my</label>
+						<select class="form-control input-lg"  ng-model="submitdata.shiftmy" ng-options=" c.Id as c.Name for c in bhkList" ng-required="true">
+						  <option value=''>Select</option>
+						</select>
+					<p ng-show="infoForm.shiftmy.$error.required && (infoForm.shiftmy.$dirty || submitted)" class="help-block">Select Shift Home.</p>	
+					</div>
+					</div>
+					
+					<div class="col-xs-6">
+						<div class="form-group" ng-class="{ 'has-error' : infoForm.name.$invalid && (infoForm.name.$dirty || submitted)}">
+							<label class="control-label">From</label>
+						<input  maxlength="400" type="text" required="required" ng-model="submitdata.from" class="form-control input-lg" ng-required="true" placeholder="Enter From Address"  /> 
+                        <p ng-show="infoForm.name.$error.required && (infoForm.name.$dirty || submitted)" class="help-block">You From Address is required.</p>
+						  </div>
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group" ng-class="{ 'has-error' : infoForm.name.$invalid && (infoForm.name.$dirty || submitted)}">
+							<label class="control-label">To</label>
+						<input  maxlength="400" type="text" required="required" ng-model="submitdata.to" class="form-control input-lg" ng-required="true" placeholder="Enter To Address"  /> 
+                        <p ng-show="infoForm.name.$error.required && (infoForm.name.$dirty || submitted)" class="help-block">You To Address required.</p>
+						  </div>
+					</div>	
+					
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label ">Date</label>
+						   <p class="input-group">
+								  <input type="text" class="form-control input-lg" uib-datepicker-popup="{{format}}"  is-open="popup1.opened" datepicker-options="dateOptions" placeholder="Select date" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="submitdata.date" />
+								  <span class="input-group-btn">
+									<button type="button" class="btn btn-default" style="    padding: 12px 12px;" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+								  </span>
+							</p>
+					  </div>
+					</div>		
+					</div>
+				</div>
+				</div>
+	              <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next <span class="glyphicon glyphicon-chevron-right"></span></button>
+      	</div>
+        </div>
+    <div class="row setup-content" id="step-2">
+          <div class="col-xs-12">
+        
+				<div class="panel panel-default">
+					<div class="panel-heading text-center">
+						SHIFTING INFO 2
+					</div>
+					
+					<div class="panel-body boxme">
+					<div class="row">
+						<div class="col-xs-6">
+						<div class="form-group" ng-class="{ 'has-error' : infoForm.country.$invalid && (infoForm.country.$dirty || submitted)}">
+							<label class="control-label">Present floor</label>
+							<select class="form-control input-lg" data-style="btn-primary" ng-model="submitdata.presentfloor" ng-required="true">
+							  <option value=''>Select</option>
+							  <option value="1st floor">1st floor</option>
+							  <option value="1st floor">1st floor</option>
+							  <option value="1st floor">1st floor</option>
+							  <option value="1st floor">1st floor</option>
+							</select>
+						 <p ng-show="infoForm.country.$error.required && (infoForm.country.$dirty || submitted)" class="help-block">Select country.</p>	
+						</div>
+						</div>
+						
+						<div class="col-xs-6">
+							<div class="form-group top30" ng-class="{ 'has-error has-feedback' : infoForm.presentlift.$invalid && (infoForm.presentlift.$dirty || submitted)} ">
+								<div class="radio-inline">
+								<label>
+									<input type="radio" name="presentlift" ng-model="submitdata.presentlift" ng-required="!presentlift" value="Yes" > Available
+								</label>
+								</div>
+								<div class="radio-inline">
+								<label>
+									<input type="radio" name="presentlift" ng-model="submitdata.presentlift" ng-required="!presentlift" value="No" > Not Available
+								</label>
+								</div>
+							<p ng-show="infoForm.presentlift.$error.required && (infoForm.presentlift.$dirty || submitted)" class="help-block">You name is required.</p>	
+							</div>
+						</div>
+					</div>
+                    <div class="row">					
+						<div class="col-xs-6">
+							<div class="form-group" ng-class="{ 'has-error' : infoForm.country.$invalid && (infoForm.country.$dirty || submitted)}">
+								<label class="control-label">Going floor</label>
+								<select class="form-control input-lg" data-style="btn-primary" ng-model="submitdata.goingfloor" ng-required="true">
+								  <option value=''>Select</option>
+								  <option value="1st floor">1st floor</option>
+								  <option value="1st floor">1st floor</option>
+								  <option value="1st floor">1st floor</option>
+								  <option value="1st floor">1st floor</option>
+								</select>
+							<p ng-show="infoForm.country.$error.required && (infoForm.country.$dirty || submitted)" class="help-block">Select Going floor.</p>	
+							</div>
+						</div>	
+						
+						<div class="col-xs-6">
+							<div class="form-group top30" ng-class="{ 'has-error has-feedback' : infoForm.goinglift.$invalid && (infoForm.goinglift.$dirty || submitted)} ">
+								<div class="radio-inline">
+								<label>
+									<input type="radio" name="goinglift" ng-model="submitdata.goinglift" ng-required="!goinglift" value="Yes" > Available
+								</label>
+								</div>
+								<div class="radio-inline">
+								<label>
+									<input type="radio" name="goinglift" ng-model="submitdata.goinglift" ng-required="!goinglift" value="No" > Not Available
+								</label>
+								</div>
+							<p ng-show="infoForm.goinglift.$error.required && (infoForm.goinglift.$dirty || submitted)" class="help-block">You name is required.</p>	
+							</div>
+						</div>		
+					</div>	
+					</div>
+				</div>
+              <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next <span class="glyphicon glyphicon-chevron-right"></span></button>
+            
+      </div>
+        </div>
+    <div class="row setup-content" id="step-3">
+          
+        <div class="col-md-12">
+		
+				<div class="panel panel-default">
+					<div class="panel-heading text-center">
+						YOUR PERSONAL DETAILS
+					</div>
+					
+					<div class="panel-body boxme">
+					<div class="col-xs-6">
+					 <div class="form-group" ng-class="{ 'has-error' : infoForm.email.$invalid && (infoForm.email.$dirty || submitted)}">
+					 <label class="control-label">Email</label>
+					 <input type="email" name="email" class="form-control input-lg" ng-model="submitdata.email" placeholder="Your Email Address" ng-required="true">
+					 <p ng-show="infoForm.email.$error.required && (infoForm.email.$dirty || submitted)" class="help-block">Email is required.</p>
+					 <p ng-show="infoForm.email.$error.email && (infoForm.email.$dirty || submitted)" class="help-block">Enter a valid email.</p>
+					 </div>					
+					</div>
+					
+                    <div class="col-xs-6">
+					 <div class="form-group" ng-class="{ 'has-error' : infoForm.mobile.$invalid && (infoForm.mobile.$dirty || submitted)}">
+					 <label class="control-label">Mobile Number</label>
+					 <input type="text" name="mobile" class="form-control input-lg" ng-model="submitdata.mobile" placeholder="Your Mobile Number" autofocus ng-pattern="/^[789]\d{9}$/" maxlength="10" ng-required="true">
+					 <p ng-show="infoForm.mobile.$error.required && (infoForm.mobile.$dirty || submitted)" class="help-block">Your Mobile Number is required.</p>
+					 <p ng-show="infoForm.mobile.$error.pattern && (infoForm.mobile.$dirty || submitted)" class="help-block">Enter a valid contactno.</p>
+					 </div>					
+					</div>
+					
+
+					
+                    </div>
+				</div>	
+					
+
+              <button class="btn btn-success btn-lg nextBtn pull-right" type="submit" ng-click="submit()">Submit </button>
+        </div>
+    </div>
+</form>
+  
+   <div ng-repeat="i in upImages">{{i.url}}</div>
+</div>
+<div ui-view="one" class="col-md-4">
+	
+</div>
+
+ 
+ 
+</div>
+<script type="text/javascript">
+
+
+  $(document).ready(function () {
+  	
+$('#datePicker')
+        .datepicker({
+            format: 'mm/dd/yyyy'
+        })
+        .on('changeDate', function(e) {
+            
+        });
+  var navListItems = $('div.setup-panel div a'),
+		  allWells = $('.setup-content'),
+		  allNextBtn = $('.nextBtn');
+
+  allWells.hide();
+
+  navListItems.click(function (e) {
+	  e.preventDefault();
+	  var $target = $($(this).attr('href')),
+			  $item = $(this);
+
+	  if (!$item.hasClass('disabled')) {
+		  navListItems.removeClass('btn-primary').addClass('btn-default');
+		  $item.addClass('btn-primary');
+		  allWells.hide();
+		  $target.show();
+		  $target.find('input:eq(0)').focus();
+	  }
+  });
+
+  allNextBtn.click(function(){
+	  var curStep = $(this).closest(".setup-content"),
+		  curStepBtn = curStep.attr("id"),
+		  nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+		  curInputs = curStep.find("input[type='text'],input[type='url'],textarea[textarea],select,input[type=checkbox], input[type=radio],input[type='email']"),
+		  isValid = true;
+
+	  $(".form-group").removeClass("has-error");
+	  for(var i=0; i<curInputs.length; i++){
+		  if (!curInputs[i].validity.valid){
+			  isValid = false;
+			  $(curInputs[i]).closest(".form-group").addClass("has-error");
+		  }
+	  }
+
+	  if (isValid)
+		  nextStepWizard.removeAttr('disabled').trigger('click');
+  });
+
+  $('div.setup-panel div a.btn-primary').trigger('click');
+});
+  </script>

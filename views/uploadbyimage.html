@@ -1,0 +1,42 @@
+<div class="container top30">
+<div class="row">
+<div class="col-md-12">
+
+<div class="col-md-4">
+ <div class="panel panel-default">
+    <div class="panel-heading">Select Images to Upload</div>
+    <div class="panel-body" style=" padding: 30px 20px;">
+		<form>          	
+		<input id="inputImage3" type="file" class="btn btn-primary btn-block" accept="image/*"  multiple image="images3"     resize-max-height="300"
+			resize-max-width="250"
+			resize-quality="0.7" required/>
+		</form>	
+		  <div class="clearfix">&nbsp;</div>   
+		 <button type="submit" class="btn btn-primary btn-block" ng-click="submitimages(images3)" ng-disabled="!images3">Add</button>
+    </div>
+
+ </div>
+
+</div>
+ 
+<div class="col-md-8 "> 
+ <div class="panel panel-default">
+    <div class="panel-heading">Upload Images</div>
+    <div class="panel-body" style="min-height: 151px;">
+	
+	<div class="row" ng-if="images3">
+	<div class="col-md-4 showimg" ng-repeat="img in images3">
+	<img  ng-src="{{img.url}}" class="img-responsive" type="{{img.file.type}}"/>
+	</div>
+	</div>
+    </div>
+
+ </div>
+ <div ng-repeat="i in upImages">{{i.url}}</div>
+<!--  <img  ng-src="{{img.resized.dataURL}}" class="img-responsive" type="{{img.file.type}}"/> -->
+
+</div>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,87 @@
+{
+  "maincategory": "VEHICLES",
+  "KITCHEN APPLIANCES": [
+    {
+	    "id":28,
+      "type": "select",
+      "name": "Air Fryers ",
+	  "cartCount":0
+    },
+    {
+	  "id":29,
+      "type": "select",
+      "name": "Espresso Machines ",
+	  "cartCount":0
+    },
+    {
+	  "id":30,
+      "type": "select",
+      "name": "Hand Blenders ",
+	  "cartCount":0
+    },
+    {
+	  "id":31,
+      "type": "select",
+      "name": "Mixers & Grinders ",
+	  "cartCount":0
+    },
+    {
+	  "id":32,
+      "type": "select",
+      "name": "Deep fryer",
+	  "cartCount":0
+    }
+  ],
+  "ELECTRONIC APPLIANCES": [
+    {
+	  "id":33,
+      "type": "select",
+      "name": "Clothes dryer",
+	  "cartCount":0
+    },
+    {
+	  "id":34,
+      "type": "select",
+      "name": "Dishwasher ",
+	  "cartCount":0
+    },
+    {
+	  "id":35,
+      "type": "select",
+      "name": "Garbage disposal unit ",
+	  "cartCount":0
+    },
+    {
+	  "id":36,
+      "type": "select",
+      "name": "Hair dryer",
+	  "cartCount":0
+    }
+  ],
+  "HOME APPLIANCES": [
+    {
+	  "id":37,
+      "type": "select",
+      "name": "Air Coolers",
+	  "cartCount":0
+    },
+    {
+	  "id":38,
+      "type": "select",
+      "name": "Vacuum Cleaners",
+	  "cartCount":0
+    },
+    {
+	  "id":39,
+      "type": "select",
+      "name": "Water Purifiers",
+	  "cartCount":0
+    },
+    {
+	  "id":40,
+      "type": "select",
+      "name": "Water Heaters",
+	  "cartCount":0
+    }
+  ]  
+}

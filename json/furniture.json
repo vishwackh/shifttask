@@ -1,0 +1,87 @@
+{
+  "maincategory": "FURNITURE",
+  "sofas": [
+    {
+	  "id":15,
+      "type": "select",
+      "name": "Leatherette Sofa Sets ",
+	  "cartCount":0
+    },
+    {
+	  "id":16,
+      "type": "select",
+      "name": "Fabric Sofa Sets ",
+	  "cartCount":0
+    },
+    {
+	  "id":17,
+      "type": "select",
+      "name": "Sofa cum Beds ",
+	  "cartCount":0
+    },
+    {
+	  "id":18,
+      "type": "select",
+      "name": "Wooden Sofa Sets ",
+	  "cartCount":0
+    },
+    {
+	  "id":19,
+      "type": "select",
+      "name": "Sofa cum Beds ",
+	  "cartCount":0
+    }
+  ],
+  "chairs": [
+    {
+	  "id":20,
+      "type": "select",
+      "name": "Ottomans & Stools ",
+	  "cartCount":0
+    },
+    {
+	  "id":21,
+      "type": "select",
+      "name": "Benches ",
+	  "cartCount":0
+    },
+    {
+	  "id":22,
+      "type": "select",
+      "name": "Recliners ",
+	  "cartCount":0
+    },
+    {
+	  "id":23,
+      "type": "select",
+      "name": "Lounge & Accent Chairs ",
+	  "cartCount":0
+    }
+  ],
+  "dining tables and sets": [
+    {
+	  "id":24,
+      "type": "select",
+      "name": "6 Seater Dining Table Sets ",
+	  "cartCount":0
+    },
+    {
+	  "id":25,
+      "type": "select",
+      "name": "Accent Dining Table Sets ",
+	  "cartCount":0
+    },
+    {
+	  "id":26,
+      "type": "select",
+      "name": "Dining Tables ",
+	  "cartCount":0
+    },
+    {
+	  "id":27,
+      "type": "select",
+      "name": "Folding Dining Sets ",
+	  "cartCount":0
+    }
+  ]  
+}

@@ -1,0 +1,58 @@
+<div class="col-md-12 pad0 ">
+  			  <div class="panel panel-default">
+	<div class="panel-heading text-center">
+		IMAGE CART
+	</div>
+	<div class="panel-body">
+
+<div class="row">
+<div class="col-xs-12 pad0 minh">
+
+<div class="col-xs-12 padbox" >
+<div class="col-xs-3 padbot" ng-repeat="i in upImages">
+<img  ng-src="{{i.url}}" class="img-responsive cpointer" type="{{i.file.type}}" ng-click="show(i)"/>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-12 padbox">
+
+<div ng-if="upImages.length <= 0" class="col-xs-12 bbotom">
+<p class="carttext">Your cart is empty. Add Images to Book.</p>
+<a ui-sref="uploadbyimage"  class="btn btn-primary btn-block">Book Now</a>
+</div>
+
+<div ng-if="upImages.length >= 1" class="col-xs-12 bbotom">
+<h4 >Total Images: {{upImages.length}}</h4>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+	</div>
+  <!-- Image Model  -->
+
+  <div class="modal fade" id="imagemodel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+        <img ng-src="{{img.url}}" class="img-responsive " type="{{i.file.type}}" />
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

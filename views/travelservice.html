@@ -1,0 +1,107 @@
+ <div class="container top30">
+<div class="row">
+<div class="col-md-12">
+<div class="col-md-offset-3 col-md-6 top30">
+<div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add New Record | TravelService</h3>
+          </div>
+    <div class="panel-body boxpanel top30">
+ <form name="userForm"  novalidate>
+ 
+  <!-- NAME -->
+ <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && (userForm.name.$dirty || submitted),'has-success' : userForm.name.$valid && (userForm.name.$dirty || submitted)}">
+ <input type="text" name="name" class="form-control" ng-model="ldata.name" placeholder="Your Service Name" ng-required="true">
+ <p ng-show="userForm.name.$error.required && (userForm.name.$dirty || submitted)" class="help-block">Service name is required.</p>
+ </div>
+
+  
+  <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="addlocationdata(ldata)">Add Record</button>
+ <div class="clearfix">&nbsp;</div>
+</form>
+ </div>
+
+</div>
+</div>
+
+<div class="clearfix">&nbsp;</div>
+<div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Locations </h3>
+          </div>
+          <div class="panel-body table-responsive">
+          <h3 class="tablethtext" ng-if="!serviceList"><i class="fa fa-database" aria-hidden="true"></i> No In The Database..</h3>
+          <div ng-if="serviceList">          
+          <table class="table table-bordered" at-table at-paginated at-list="serviceList" at-config="config">
+            <thead>
+            </thead>
+            <tbody>
+              <tr>
+                <td  at-implicit at-sortable at-attribute="id"  at-initial-sorting="asc"></td>
+                <td  at-sortable at-title="Location Name">{{item.name | lowercase}}</td>
+                <td  at-sortable at-title="Created Date">{{item.createdDate | timeago}}</td>
+                <td align="center">
+                <a class="btn btn-default" ng-click="editlocation(item)" data-toggle="modal" ><em class="fa fa-pencil"></em></a>
+                <a class="btn btn-danger" ng-click="deletelocation(item)"><em class="fa fa-trash"></em></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <at-pagination at-list="serviceList" at-config="config"></at-pagination> 
+        </div>
+          </div>
+        </div>
+</div>
+</div>
+</div>
+<!-- Edit Model  -->
+<div class="modal fade" id="editmodel" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Home Categories</h4>
+      </div>
+      <div class="modal-body">
+        
+<form name="edituserForm"  novalidate>
+
+  <!-- NAME -->
+ <div class="form-group" ng-class="{ 'has-error' : edituserForm.name.$invalid && (edituserForm.name.$dirty || submitted),'has-success' : edituserForm.name.$valid && (edituserForm.name.$dirty || submitted)}">
+ <input type="text" name="name" class="form-control" ng-model="hdata.name" placeholder="Your Location Name" ng-required="true">
+ <p ng-show="edituserForm.name.$error.required && (edituserForm.name.$dirty || submitted)" class="help-block">Location name is required.</p>
+ </div>
+
+  <input type="text" class="form-control hide"  ng-model="hdata.id" />
+  
+  <button type="submit" class="btn btn-primary" ng-disabled="edituserForm.$invalid" ng-click="editlocationcatdata(hdata)">Update Record</button>
+ <div class="clearfix">&nbsp;</div>
+</form> 
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Model  -->
+
+<div class="modal fade" id="deletemodel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">You Want to delete <span class="red">{{delobj.name}} </span></h4>
+      </div>
+      <div class="modal-body">
+
+      <button type="submit" class="btn btn-danger" ng-click="deletelocationrecord(delobj)">Yes</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">NO</button>
+      </div>
+    </div>
+  </div>
+</div>  
+</div>

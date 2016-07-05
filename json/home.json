@@ -1,0 +1,93 @@
+{
+  "maincategory": "home",
+  "livingroom": [
+    {
+	  "id":1,
+      "type": "select",
+      "name": "Air Conditioner (Window)",
+      "cartCount":0
+    },
+    {
+	  "id":2,
+      "type": "select",
+      "name": "Aquarium",
+      "cartCount":0
+    },
+    {
+	  "id":3,
+      "type": "select",
+      "name": "Computer Table",
+      "cartCount":0
+    },
+    {
+	  "id":4,
+      "type": "select",
+      "name": "Bookshelf",
+      "cartCount":0
+    },
+    {
+	  "id":5,
+      "type": "select",
+      "name": "Fan Ceilling",
+      "cartCount":0
+    },
+    {
+	  "id":6,
+      "type": "select",
+      "name": "Table Bar",
+      "cartCount":0
+    }
+  ],
+  "bedroom": [
+    {
+	  "id":7,
+      "type": "select",
+      "name": "Books Carton",
+      "cartCount":0
+    },
+    {
+	  "id":8,
+      "type": "select",
+      "name": "Bunk Bed",
+      "cartCount":0
+    },
+    {
+	  "id":9,
+      "type": "select",
+      "name": "Fan Ceilling",
+      "cartCount":0
+    },
+    {
+	  "id":10,
+      "type": "select",
+      "name": "Mirror",
+      "cartCount":0
+    }
+  ],
+  "kitchen": [
+    {
+	  "id":11,
+      "type": "select",
+      "name": "Dinner Set",
+	  "cartCount":0
+    },
+    {
+	  "id":12,
+      "type": "select",
+      "name": "Gas stove",
+	  "cartCount":0
+    },
+    {
+	  "id":13,
+      "type": "select",
+      "name": "Microwave",
+	  "cartCount":0
+    },
+    {
+	  "id":14,
+      "type": "select",
+      "name": " Refrigerator",
+	  "cartCount":0
+    }
+  ]  
+}

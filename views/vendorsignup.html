@@ -1,0 +1,103 @@
+<style>
+.password-strength-indicator {
+top:681px !important;
+}
+</style>
+<div class="container top30">
+<div class="row">
+<h4 class="text-center text-success">{{successmsg}}</h4>	
+<div class="col-md-offset-4 col-md-4">
+
+<div class="panel-body boxpanel">
+        <h2 class="text-center">Vendor Sign up</h2>
+        <form name="userForm"  novalidate>
+		
+			<!-- NAME -->
+			<div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && (userForm.name.$dirty || submitted)}">
+			<input type="text" name="name" class="form-control input-lg" ng-model="signup.name" placeholder="Your Name" focus ng-required="true">
+			<p ng-show="userForm.name.$error.required && (userForm.name.$dirty || submitted)" class="help-block">You name is required.</p>
+			</div>
+
+
+			<div class="form-group" ng-class="{ 'has-error' : userForm.pannumber.$invalid && (userForm.pannumber.$dirty || submitted)}">
+			<input type="text" name="pannumber" ng-pattern="/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/" class="form-control input-lg" ng-model="signup.pannumber" placeholder="PAN [ex:AERSW7654E]"  maxlength="10" ng-required="true">
+			<p ng-show="userForm.pannumber.$error.required && (userForm.pannumber.$dirty || submitted)" class="help-block">Your PAN Number is required.</p>
+			 <p ng-show="userForm.pannumber.$error.pattern && (userForm.pannumber.$dirty || submitted)" class="help-block">Enter a valid PAN Number.</p>			
+			</div>
+
+
+			 <!-- EMAIL -->
+			 <div class="form-group" ng-class="{ 'has-error' : userForm.emailId.$invalid && (userForm.emailId.$dirty || submitted)}">
+			 <input type="email" name="emailId" class="form-control input-lg" ng-model="signup.emailId" placeholder="Your Email Address" ng-required="true">
+			 <p ng-show="userForm.emailId.$error.required && (userForm.emailId.$dirty || submitted)" class="help-block">Email is required.</p>
+			 <p ng-show="userForm.emailId.$error.email && (userForm.emailId.$dirty || submitted)" class="help-block">Enter a valid email.</p>
+			 </div>
+		    
+			 <!-- CONTACTNO -->
+			 <div class="form-group" ng-class="{ 'has-error' : userForm.mobilenumber.$invalid && (userForm.mobilenumber.$dirty || submitted) }">
+			 <input type="text" name="mobilenumber" class="form-control input-lg" ng-model="signup.mobilenumber" placeholder="Your Contact No" ng-required="true" ng-pattern="/^[789]\d{9}$/" maxlength="10">
+			 <p ng-show="userForm.mobilenumber.$error.required && (userForm.mobilenumber.$dirty || submitted)" class="help-block">Contact number is Required.</p>
+			 <p ng-show="userForm.mobilenumber.$error.pattern && (userForm.mobilenumber.$dirty || submitted)" class="help-block">Enter a valid contact number.</p>
+			 </div>	
+
+
+            <div class="form-group" ng-class="{ 'has-error' : userForm.states.$invalid && (userForm.states.$dirty || submitted)}">
+			 <select name="states" class="form-control input-lg" ng-model="signup.states" ng-required="true">
+			 <option value=''>Select State</option>
+			 <option value='karnataka'>Karnataka</option>
+			 </select>            
+			 <p ng-show="userForm.states.$error.required && (userForm.states.$dirty || submitted)" class="help-block">Your States is required.</p>                
+            </div>	
+
+            <div class="form-group" ng-class="{ 'has-error' : userForm.city.$invalid && (userForm.city.$dirty || submitted)}">
+			 <select name="city" class="form-control input-lg" ng-model="signup.city" ng-required="true">
+			 <option value=''>Select City</option>
+			 <option value='bangalore'>Bangalore</option>
+			 </select>             
+			 <p ng-show="userForm.city.$error.required && (userForm.city.$dirty || submitted)" class="help-block">Your City is required.</p>                
+            </div>	
+
+            <div class="form-group" ng-class="{ 'has-error' : userForm.address.$invalid && (userForm.address.$dirty || submitted)}">
+           <textarea class="form-control input-lg vresize" name="address" rows="3" placeholder="Address" ng-model="signup.address"  ng-required="true"></textarea>            
+			 <p ng-show="userForm.address.$error.required && (userForm.address.$dirty || submitted)" class="help-block">Your Address is required.</p>                
+            </div>	
+
+
+
+            <div class="form-group" ng-class="{ 'has-error' : userForm.area.$invalid && (userForm.area.$dirty || submitted)}">
+            <input type="text" name="area" class="form-control input-lg" placeholder="Area" ng-model="signup.area" ng-required="true"/>
+			 <p ng-show="userForm.area.$error.required && (userForm.area.$dirty || submitted)" class="help-block">Your Area is required.</p>                
+            </div>	
+
+            <div class="form-group" ng-class="{ 'has-error' : userForm.pincode.$invalid && (userForm.pincode.$dirty || submitted)}">
+            <input type="text" name="pincode" class="form-control input-lg" placeholder="Pin code" ng-model="signup.pincode" maxlength="6" ng-pattern="/^[1-9][0-9]{5}$/"ng-required="true"/>
+			 <p ng-show="userForm.pincode.$error.required && (userForm.pincode.$dirty || submitted)" class="help-block">Your Pincode is required.</p>  
+			 <p ng-show="userForm.pincode.$error.pattern && (userForm.pincode.$dirty || submitted)" class="help-block">Enter valid Pin Code.</p>			              
+            </div>	
+                                    
+			 <!-- PASSWORD -->
+			 <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && (userForm.password.$dirty || submitted)}">
+			 <input password-strength type="Password" name="password" class="form-control input-lg" ng-model="signup.password" placeholder="Your Password" ng-required="true">
+			 
+			 <p ng-show="userForm.password.$error.required && (userForm.password.$dirty || submitted)" class="help-block">Your password is required.</p>
+			 </div>
+			 
+			 <!-- CONFIRM PASSWORD -->
+			 <div class="form-group" ng-class="{ 'has-error' : userForm.confirmPassword.$invalid && (userForm.confirmPassword.$dirty || submitted)}">
+			 <input type="Password" name="confirmPassword" class="form-control input-lg" ng-model="signup.confirmPassword" placeholder="Confirm Your Password" password-match="signup.password"  ng-required="true">
+			 <p ng-show="userForm.confirmPassword.$error.required && (userForm.confirmPassword.$dirty || submitted)" class="help-block">Your confirm password is required.</p>
+			 <p ng-show="userForm.confirmPassword.$error.passwordNoMatch && (userForm.confirmPassword.$dirty || submitted)" class="help-block">Confirm password doesnot match.</p>
+			 </div>
+
+          <p class="text-center text-muted"><small>By clicking on Sign up, you agree to <a href="">terms &amp; conditions</a> and <a href="">privacy policy</a></small>
+		  </p>
+		  
+          <button type="submit" ng-disabled="userForm.$invalid" class="btn btn-lg btn-block btn-primary" ng-click="signUp(signup)" disabled="disabled">Sign up</button>
+          <br>
+          <p class="text-center text-muted">Already have an account? <a ui-sref="vendorlogin">Log in now</a></p>
+        </form>
+</div>
+
+</div>
+</div>
+</div>

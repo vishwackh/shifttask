@@ -1,0 +1,62 @@
+<div class="col-md-2 sidebar">
+  			<div class="row">
+	<!-- uncomment code for absolute positioning tweek see top comment in css -->
+	<div class="absolute-wrapper"> </div>
+	<!-- Menu -->
+	<div class="side-menu">
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Main Menu -->
+			<div class="side-menu-container">
+				<ul class="nav navbar-nav sidetopborder">
+					<li ng-repeat='x in maincategory' ng-class="{'mainactive': categoryshow == x}" ng-click='fetchmaindata(x)'><a href=""><span class="glyphicon glyphicon-menu-right"></span> {{x}}</a></li>					
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+
+	</div>
+</div>  		
+</div>
+  		
+<div class="col-md-7 content">
+  			  <div class="panel panel-default">
+	<div class="panel-heading text-center">
+		MAKE A BOOKING {{categoryshow}}
+	</div>
+	<div class="panel-body">
+	
+<div class="col-md-4 pad0">
+    <nav class="nav-sidebar">
+		<ul class="nav tabs sidetopborder">
+          <li ng-class="{subactive : activeValue == key}"  ng-repeat='(key,value) in data | unique:"catgoryname"' ng-if="key!='maincategory'" ng-click='fetchdata(value.catgoryname)'><a href="" >{{value.catgoryname}} <span class="glyphicon glyphicon-menu-right pull-right"></span></a> </li>                             
+		</ul>
+	</nav>
+</div>
+
+<div class="col-md-8 bleft">
+<div class="row eachitem">
+
+<div class="col-xs-12 padbox" ng-repeat="x in data | filter:{ catgoryname: subcateitem}">
+	<div class="col-xs-8">	
+	{{x.name}}
+	</div>
+	
+    <div class="col-xs-4">
+	<div class="subcatitem">
+      <span class="reduce-cart cursor-hand" ng-class="{'not-active' : x.cartcount <= '0' }">
+     <img src="images/reduce-item.png"  ng-hide="x.cartcount <= 0 " ng-click='removeItemInCart(x)' />
+      </span>
+      <span class="item-quantity">{{x.cartcount}}</span>
+      <span class="add-cart cursor-hand" ng-class="{'not-active' : x.cartcount >= '5' }">
+       <img src="images/add-item.png"  ng-class="{'notvisible': x.cartcount >= '5'}" ng-click='addItemInCart(x)'  />
+      </span>
+    </div>
+	</div>
+</div>
+	
+</div>
+
+</div>
+	
+</div>
+  		</div>
+</div>

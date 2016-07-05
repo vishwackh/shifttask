@@ -1,0 +1,45 @@
+<style type="text/css">
+.password-strength-indicator {
+    top: 133px !important;	
+}    
+</style>
+<div class="row">
+<div class="col-md-12">
+<div class="col-md-offset-2 col-md-5">
+
+<div class="panel-body boxpanel">
+        <h2 class="text-center">Reset Password</h2>
+ 
+        <form name="userForm"   novalidate>
+			 <!-- CURRENT PASSWORD -->
+<!--  	 <input type="email"  class="" name="emailId"  ng-model="reset.emailId" />  --> 
+			 <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && (userForm.password.$dirty || submitted)}">
+			 <input  type="password" name="password" class="form-control input-lg" ng-model="reset.password" placeholder="Your Current Password" ng-required="true">
+			 <p ng-show="userForm.password.$error.required && (userForm.password.$dirty || submitted)" class="help-block">Your current password is required.</p>
+			 </div>
+
+			 <!-- NEW PASSWORD -->
+			 <div class="form-group" ng-class="{ 'has-error' : userForm.newpassword.$invalid && (userForm.newpassword.$dirty || submitted)}">
+			 <input password-strength type="password" name="newpassword" class="form-control input-lg" ng-model="reset.newpassword" placeholder="Your New Password" ng-required="true">			 
+			 <p ng-show="userForm.newpassword.$error.required && (userForm.newpassword.$dirty || submitted)" class="help-block">Your new password is required.</p>
+			 </div>
+			 
+			 <!-- CONFIRM PASSWORD -->
+			 <div class="form-group" ng-class="{ 'has-error' : userForm.confirmPassword.$invalid && (userForm.confirmPassword.$dirty || submitted)}">
+			 <input type="password" name="confirmPassword" class="form-control input-lg" ng-model="reset.confirmPassword" placeholder="Confirm Your Password" password-match="reset.newpassword"  ng-required="true">
+			 <p ng-show="userForm.confirmPassword.$error.required && (userForm.confirmPassword.$dirty || submitted)" class="help-block">Your confirm password is required.</p>
+			 <p ng-show="userForm.confirmPassword.$error.passwordNoMatch && (userForm.confirmPassword.$dirty || submitted)" class="help-block">Confirm password doesnot match.</p>
+			 </div>
+
+		  
+          <button type="submit" ng-disabled="userForm.$invalid" class="btn btn-lg btn-block btn-primary" ng-click="resetPass(reset)" disabled="disabled">Reset Password</button>
+          <br>
+		  
+        </form>
+
+<div class="clearfix">&nbsp;</div>		
+</div>
+
+</div>
+</div>
+</div>

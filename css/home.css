@@ -1,0 +1,157 @@
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(../images/1.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+	padding: 100px 0;
+	border-radius: 0px !important;
+}
+.bgcontact{
+  background-image: url(../images/banner-878.jpg);
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 90px 0;
+}
+.bgabout{
+    background:#548ab6;
+}
+.teambg{
+background:#e6e6e6;  
+}
+.abpad{
+    padding: 50px 0;
+}
+.about-content-header{
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0px 0px;
+  font-weight: 600;
+}
+.customericon i{
+  vertical-align: middle;
+  float: right;
+  font-size: 100px;
+  color: #72d27f;
+}
+.customerinfo h2{
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0px 0px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+.customerinfo span{
+
+}
+.contact-info-container {
+  text-align: center;
+  background-color: rgba(0,0,0,.075);
+  padding: 10px 0;
+}
+.contact-info-box > i {
+    color: #2297F4;
+    vertical-align: middle;
+    font-size: 25px;
+}
+.contact-info-box {
+    display: inline-block;
+    padding: 10px 20px;
+    vertical-align: middle;
+}
+.white{
+  color:#fff;
+}
+.getintouch{
+  padding: 150px 0 0 0;
+  display: inline-block;
+  position: relative;
+}
+.panel-min{
+    max-width: 350px;
+}
+.panel-min h2{
+  color: #333333;
+  vertical-align: middle;
+  font-size: 22px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.panel-min form{
+
+}
+.jumbotron h2, .jumbotron h4{
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+.orhome{
+	padding: 0 10px;
+}
+.homesection-title{
+	text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    margin-top: 35px;
+    font-size: 28px;
+    font-weight: 700;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.feature {
+    text-align: center;
+}
+
+.feature-image {
+    padding: 0px 0px 30px 0px;
+    height: 85px;
+}
+
+.feature-image img {
+    height: 100%;
+}
+
+.feature-title {
+    margin: 0 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.feature-content {
+    font-size: 15px;
+    margin: 0px auto;
+    margin-bottom: 50px;
+    margin-top: 6px;
+    max-width: 192px;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+}
+
+#myCarousel ol li {
+    border: 1px solid rgba(255,255,255,.15);
+    bottom: 0px;
+    background: #67881D;
+}
+#myCarousel ol{
+    bottom: 0px;
+}
+.itemhead{
+    text-align:center;padding:50px 100px;
+}
+
+@media only screen and (min-width: 320px) {
+    .itemhead {
+       padding:30px;
+    }
+}
+
+.top30{
+margin-top:30px;
+}

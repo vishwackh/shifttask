@@ -1,0 +1,11 @@
+<ul class="nav nav-pills nav-stacked">
+
+    <li role="presentation" ng-show="authenticated" ng-class="{active: $state.includes('categorydata')}"><a ui-sref="categorydata">Home Categories</a></li>
+
+    <li role="presentation" ng-show="authenticated" ng-class="{active: $state.includes('furniture')}"><a ui-sref="furniture">Furniture Categories</a></li> 
+
+    <li ng-show="authenticated" ng-class="{active: $state.includes('applicanes')}"><a ui-sref="applicanes">Applicanes Categories</a></li>  
+
+    <li ng-show="authenticated" ng-class="{active: $state.includes('vehicles')}"><a ui-sref="vehicles">Vehicles Categories</a></li>
+
+</ul>

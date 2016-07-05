@@ -1,0 +1,53 @@
+<div class="container top30">
+<div class="row">
+<div class="col-md-offset-4 col-md-4">
+
+<div class="panel-body boxpanel">
+        <h2 class="text-center">Login</h2>
+		
+        <form name="userForm"  novalidate>
+		
+			 <!-- EMAIL -->
+			 <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && (userForm.email.$dirty || submitted)}">
+			 <input type="email" name="email" class="form-control input-lg" ng-model="login.email" placeholder="Your Email Address" focus ng-required="true">
+			 <p ng-show="userForm.email.$error.required && (userForm.email.$dirty || submitted)" class="help-block">Email is required.</p>
+			 <p ng-show="userForm.email.$error.email && (userForm.email.$dirty || submitted)" class="help-block">Enter a valid email.</p>
+			 </div>
+		  	  
+			 
+			 <!-- PASSWORD -->
+			 <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && (userForm.password.$dirty || submitted)}">
+			 <input type="Password" name="password" class="form-control input-lg" ng-model="login.password" placeholder="Your Password" ng-required="true">
+			 <p ng-show="userForm.password.$error.required && (userForm.password.$dirty || submitted)" class="help-block">Your password is required.</p>
+			 </div>
+
+		  
+          <button type="submit" ng-disabled="userForm.$invalid" class="btn btn-lg btn-block btn-primary" ng-click="doLogin(login)" disabled="disabled">Sign up</button>
+          <br>
+          <p class="text-center text-muted">
+            <small>Don't have an account yet? <a ui-sref="signup">Sign up</a></small>
+          </p>
+          <p class="text-center text-muted">
+            <small>Have you forgot your Password? <a ui-sref="forgotpassword">Forgot Password</a></small>
+          </p>		  
+          <div class="signup-or-separator">
+            <h6 class="text">or</h6>
+            <hr>
+          </div>
+		  
+        </form>
+		
+        <button class="btn btn-block btn-facebook" ng-click="loginfb()" >
+        <i class="fa fa-facebook"></i> Sign in with Facebook
+        </button>
+		<div class="clearfix">&nbsp;</div>
+		<google-plus-signin clientid="371288957017-1qbnc7f8lhdmu5l2ff3c16d9v9jkqvdv" autorender="false" customtargetid="googlebtn">
+		<div id="googlebtn"><button class="btn btn-block btn-google-plus" ><i class="fa fa-google-plus"></i> Sign In With Google</button></div>
+		</google-plus-signin>	
+
+<div class="clearfix">&nbsp;</div>		
+</div>
+    <div id="fb-root"></div>
+</div>
+</div>
+</div>

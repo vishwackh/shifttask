@@ -1,0 +1,127 @@
+
+<div class="col-md-offset-3 col-md-6">
+<div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add New Record | Home</h3>
+          </div>
+    <div class="panel-body boxpanel top30">
+
+ <form name="userForm"  novalidate>
+  <div class="form-group" ng-class="{ 'has-error' : userForm.catgoryname.$invalid && (userForm.catgoryname.$dirty || submitted)}">
+ <select name="catgoryname" class="form-control" focus
+ ng-model="homedata.catgoryname"
+ ng-options="home as home for home in homesubList"
+ ng-required="true">
+ <option value=''>Select Sub Catogory</option>
+ </select>
+ <p ng-show="userForm.catgoryname.$error.required && (userForm.catgoryname.$dirty || submitted)" class="help-block">Select Sub Catogory.</p>
+ </div>
+
+  <!-- NAME -->
+ <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && (userForm.name.$dirty || submitted),'has-success' : userForm.name.$valid && (userForm.name.$dirty || submitted)}">
+ <input type="text" name="name" class="form-control" ng-model="homedata.name" placeholder="Your Category Name" ng-required="true">
+ <p ng-show="userForm.name.$error.required && (userForm.name.$dirty || submitted)" class="help-block">Category name is required.</p>
+ </div>
+
+   <input type="text" class="form-control hide"  ng-init="homedata.type='select'" ng-model="homedata.type" />
+  <input type="text" class="form-control hide"  ng-init="homedata.cartcount='0'" ng-model="homedata.cartcount" />
+  
+  <button type="submit" class="btn btn-primary"  ng-disabled="userForm.$invalid" ng-click="addhomecatdata(homedata)">Add Record</button>
+ <div class="clearfix">&nbsp;</div>
+</form>
+ </div>
+
+</div>
+</div>
+
+<div class="clearfix">&nbsp;</div>
+<div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Home Categories </h3>
+          </div>
+          <div class="panel-body table-responsive">
+          <h3 class="tablethtext" ng-if="!homeList"><i class="fa fa-database" aria-hidden="true"></i> No In The Database..</h3>
+          <div ng-if="homeList">           
+          <table class="table table-bordered" at-table at-paginated at-list="homeList" at-config="config">
+            <thead>
+            </thead>
+            <tbody>
+              <tr>
+                <td  at-implicit at-sortable at-attribute="id"  at-initial-sorting="asc"></td>
+                <td  at-sortable at-title="Sub Category">{{item.catgoryname}}</td>
+                <td  at-sortable at-title="Name">{{item.name}}</td>
+                <td  at-sortable at-title="Type">{{item.type}}</td>
+                <td align="center" >
+                <a class="btn btn-default" ng-click="edithome(item)" data-toggle="modal" ><em class="fa fa-pencil"></em></a>
+                <a class="btn btn-danger" ng-click="deletehome(item)"><em class="fa fa-trash"></em></a></td>
+              </tr>
+            </tbody>
+          </table>
+          <at-pagination at-list="homeList" at-config="config"></at-pagination>
+       </div>
+
+          </div>
+        </div>
+</div>
+
+<!-- Edit Model  -->
+<div class="modal fade" id="editmodel" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Home Categories</h4>
+      </div>
+      <div class="modal-body">
+        
+<form name="edituserForm"  novalidate>
+
+  <div class="form-group" ng-class="{ 'has-error' : edituserForm.catgoryname.$invalid && (edituserForm.catgoryname.$dirty || submitted)}">
+ <select name="catgoryname" class="form-control" 	
+ ng-options="home as home for home in homesubList"
+ ng-model="hdata.catgoryname"
+ ng-required="true"
+>
+ <!-- <option value=''>Select Sub Catogory</option> -->
+ </select>
+ <p ng-show="edituserForm.catgoryname.$error.required && (edituserForm.catgoryname.$dirty || submitted)" class="help-block">Select Sub Catogory.</p>
+ </div>
+
+  <!-- NAME -->
+ <div class="form-group" ng-class="{ 'has-error' : edituserForm.name.$invalid && (edituserForm.name.$dirty || submitted),'has-success' : edituserForm.name.$valid && (edituserForm.name.$dirty || submitted)}">
+ <input type="text" name="name" class="form-control" ng-model="hdata.name" placeholder="Your Category Name" ng-required="true">
+ <p ng-show="edituserForm.name.$error.required && (edituserForm.name.$dirty || submitted)" class="help-block">Category name is required.</p>
+ </div>
+
+  <input type="text" class="form-control hide"  ng-model="hdata.id" />
+  
+  <button type="submit" class="btn btn-primary" ng-disabled="edituserForm.$invalid || isUnchanged(true)"  ng-click="edithomecatdata(hdata)">Update Record</button>
+ <div class="clearfix">&nbsp;</div>
+</form> 
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Model  -->
+
+<div class="modal fade" id="deletemodel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">You Want to delete <span class="red">{{delobj.name}} </span></h4>
+      </div>
+      <div class="modal-body">
+
+      <button type="submit" class="btn btn-danger" ng-click="deletehomerecord(delobj)">Yes</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">NO</button>
+      </div>
+    </div>
+  </div>
+</div>      

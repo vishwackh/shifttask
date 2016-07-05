@@ -1,0 +1,65 @@
+{
+  "maincategory": "home",
+  "livingroom": [
+    {
+      "type": "select",
+      "name": "Air Conditioner (Window)"
+    },
+    {
+      "type": "select",
+      "name": "Aquarium"
+    },
+    {
+      "type": "select",
+      "name": "Computer Table"
+    },
+    {
+      "type": "select",
+      "name": "Bookshelf"
+    },
+    {
+      "type": "select",
+      "name": "Fan Ceilling"
+    },
+    {
+      "type": "select",
+      "name": "Table Bar"
+    }
+  ],
+  "bedroom": [
+    {
+      "type": "select",
+      "name": "Books Carton"
+    },
+    {
+      "type": "select",
+      "name": "Bunk Bed"
+    },
+    {
+      "type": "select",
+      "name": "Fan Ceilling"
+    },
+    {
+      "type": "select",
+      "name": "Mirror"
+    }
+  ],
+  "kitchen": [
+    {
+      "type": "select",
+      "name": "Dinner Set"
+    },
+    {
+      "type": "select",
+      "name": "Gas stove"
+    },
+    {
+      "type": "select",
+      "name": "Microwave"
+    },
+    {
+      "type": "select",
+      "name": " Refrigerator"
+    }
+  ]  
+}

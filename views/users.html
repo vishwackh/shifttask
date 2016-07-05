@@ -1,0 +1,121 @@
+ <div class="container top30">
+<div class="row">
+
+<div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Registered Vendors </h3>
+          </div>
+          <div class="panel-body table-responsive">  
+          <h3 class="tablethtext" ng-if="!vendorsList"><i class="fa fa-database" aria-hidden="true"></i> No Vendors Registered Yet..</h3>
+          <div ng-if="vendorsList">
+              <table class="table table-hover" at-table at-paginated at-list="vendorsList" at-config="config">
+                <thead></thead>
+                <tbody>
+                  <tr>
+                    <td  at-implicit at-sortable at-attribute="id"  at-initial-sorting="asc"></td>
+                    <td  at-sortable at-title="Name">{{item.name}}</td>
+                    <td  at-sortable at-title="Email">{{item.emailId}}</td>
+                    <td  at-sortable at-title="Mobile">{{item.mobilenumber}}</td>
+                    <td  at-sortable at-title="Address">{{item.address}}</td>
+                    <td  at-sortable at-title="Status">
+              <span class="status" ng-class="{ 'bg-danger' : item.status =='pending' ,'bg-success' : item.status =='approved'}">{{item.status}}</span>
+                    </td>
+                    <td  at-sortable at-title="Created">{{item.createdDate | timeago}}</td>
+                    <td  align="center">
+                    <a class="btn btn-success" data-target="#approvemodel" ng-click="viewvendor(item)" data-toggle="modal" ><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    </td>      
+                  </tr>
+                </tbody>
+              </table>
+              <at-pagination at-list="vendorsList" at-config="config"></at-pagination>  
+          </div>    
+          </div>
+
+        </div>
+</div>
+
+<div class="col-md-12">
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Registered Users </h3>
+          </div>
+          <div class="panel-body table-responsive">
+          <h3 class="tablethtext" ng-if="!usersList"><i class="fa fa-database" aria-hidden="true"></i> No Users Registered Yet..</h3>
+          <div ng-if="usersList">          
+          <table class="table table-hover" at-table at-paginated at-list="usersList" at-config="config">
+            <thead></thead>
+            <tbody>
+              <tr>
+                <td  at-implicit at-sortable at-attribute="uid"  at-initial-sorting="asc"></td>
+                <td  at-sortable at-title="Name">{{item.name}}</td>
+                <td  at-sortable at-title="Email">{{item.email}}</td>
+                <td  at-sortable at-title="Mobile">{{item.phone}}</td>
+                <td  at-sortable at-title="Address">{{item.address}}</td>
+                <td  at-sortable at-title="Created">{{item.created | timeago}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <at-pagination at-list="usersList" at-config="config"></at-pagination>
+          </div>
+        </div>   
+        </div>
+</div>
+
+
+</div>
+</div>
+<!-- display Model  -->
+<div class="modal fade" id="approvemodel" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Approve Vendor Details:</h4>
+      </div>
+      <div class="modal-body">
+       <div class="row"> 
+      <div class="col-md-offset-2 col-md-4 vlist" style="padding-right: 0;">
+          <p>name: </p>
+          <p>PAN number: </p>
+          <p>emailId: </p>
+          <p>mobile number: </p>
+          <p>address: </p>
+          <p>area: </p>
+          <p>city: </p>
+          <p>states: </p>
+          <p>pincode: </p>
+          <p>status: </p>
+          <p>createdDate: </p>
+    </div>
+    <div class="col-md-4 listval" style="padding-left: 0;">
+         <p> {{vendorsListOne.name}}</p>
+          <p> {{vendorsListOne.pannumber}}</p>
+          <p> {{vendorsListOne.emailId}}</p>
+          <p> {{vendorsListOne.mobilenumber}}</p>
+          <p> {{vendorsListOne.address}}</p>
+          <p> {{vendorsListOne.area}}</p>
+          <p> {{vendorsListOne.city}}</p>
+          <p> {{vendorsListOne.states}}</p>
+          <p> {{vendorsListOne.pincode}}</p>
+          <p> <span class="status" ng-class="{ 'bg-danger' : vendorsListOne.status =='pending' ,'bg-success' : vendorsListOne.status =='approved'}">{{vendorsListOne.status}}</span></p>
+          <p> {{vendorsListOne.createdDate | timeago}}</p>
+    </div>
+  </div>  
+        <div class="row"> 
+        <div class="col-md-offset-4 col-md-4">
+          <button type="button" ng-hide="vendorsListOne.status =='approved'" class="btn btn-success btn-block" ng-click="approvedetails(vendorsListOne)"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Approve</button>
+        </div>
+        </div>
+    </div> 
+<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+<!-- display Model  -->
